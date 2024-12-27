@@ -68,6 +68,7 @@ config:
         name_or_path: "stabilityai/stable-diffusion-3.5-large"
         is_v3: true
         quantize: true  # run 8bit mixed precision
+        t5_max_length: 154 # t5 max length for SD3 is 154
       sample:
         sampler: "flowmatch" # must match train.noise_scheduler
         sample_every: 250 # sample every this many steps
