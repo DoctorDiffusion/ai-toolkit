@@ -68,6 +68,42 @@ config:
         name_or_path: "stabilityai/stable-diffusion-3.5-large"
         is_v3: true
         quantize: true  # run 8bit mixed precision
+        # defines known parameters of text encoders as the u-net expects
+        t5_max_length: 154
+        t5_d_ff: 10240
+        t5_d_kv: 64
+        t5_d_model: 4096
+        t5_decoder_start_token_id: 0
+        t5_dense_act_fn: "gelu_new"
+        t5_ropout_rate: 0.1
+        t5_eos_token_id: 1
+        t5_layer_norm_epsilon: 1e-06
+        t5_num_decoder_layers: 24
+        t5_num_layers: 24
+        t5_num_heads: 64
+        t5_relative_attention_max_distance: 128
+        t5_relative_attention_num_buckets: 32
+        t5_vocab_size: 32128
+        clip_max_length: 77
+        clip_initializer_factor: 1.0
+        clip_initializer_range: 0.02
+        clip_pad_token_id: 1
+        clip_layer_norm_eps: 1e-05
+        clip_vocab_size: 49408
+        clip1_eos_token_id: 2
+        clip1_hidden_act: "quick_gelu"
+        clip1_hidden_size: 768
+        clip1_intermediate_size: 3072
+        clip1_num_layers: 12
+        clip1_num_heads: 12
+        clip1_projection_dim: 768
+        clip2_eos_token_id: 2
+        clip2_hidden_act: "gelu"
+        clip2_hidden_size: 1280
+        clip2_intermediate_size: 5120
+        clip2_num_attention_heads: 20
+        clip2_num_hidden_layers: 32
+        clip2_projection_dim: 1280
       sample:
         sampler: "flowmatch" # must match train.noise_scheduler
         sample_every: 250 # sample every this many steps

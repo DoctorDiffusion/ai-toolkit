@@ -67,6 +67,48 @@ config:
         is_flux: true
         quantize: true  # run 8bit mixed precision
 #        low_vram: true  # uncomment this if the GPU is connected to your monitors. It will use less vram to quantize, but is slower.
+        # defines known parameters of text encoders as the u-net expects
+        t5_classifier_dropout: 0.0
+        t5_d_ff: 10240
+        t5_d_kv: 64
+        t5_d_model: 4096
+        t5_decoder_start_token_id: 0
+        t5_dense_act_fn: "gelu_new"
+        t5_dropout_rate: 0.1
+        t5_eos_token_id: 1
+        t5_feed_forward_proj: "gated-gelu"
+        t5_initializer_factor: 1.0
+        t5_is_encoder_decoder: true
+        t5_is_gated_act: true
+        t5_layer_norm_epsilon: 1e-06
+        t5_num_decoder_layers: 24
+        t5_max_length: 512
+        t5_num_heads: 64
+        t5_num_layers: 24
+        t5_output_past: true
+        t5_pad_token_id: 0
+        t5_relative_attention_max_distance: 128
+        t5_relative_attention_num_buckets: 32
+        t5_tie_word_embeddings: false
+        t5_use_cache: true
+        t5_vocab_size: 32128
+        clip_attention_dropout: 0.0
+        clip_bos_token_id: 0
+        clip_dropout: 0.0
+        clip_eos_token_id: 2
+        clip_hidden_act: "quick_gelu"
+        clip_hidden_size: 768
+        clip_initializer_factor: 1.0
+        clip_initializer_range: 0.02
+        clip_intermediate_size: 3072
+        clip_layer_norm_eps: 1e-05
+        clip_max_length: 77
+        clip_num_attention_heads: 12
+        clip_num_hidden_layers: 12
+        clip_pad_token_id: 1
+        clip_projection_dim: 768
+        clip_vocab_size: 49408
+
       sample:
         sampler: "flowmatch" # must match train.noise_scheduler
         sample_every: 250 # sample every this many steps
